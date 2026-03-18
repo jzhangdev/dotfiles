@@ -1,0 +1,20 @@
+# macOS filesystem metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editor swap and backup files
+*.swp
+*.swo
+*~
+
+# Generic temp and cache directories
+.cache/
+tmp/
+temp/
+
+# Local environment/tool state
+.direnv/
