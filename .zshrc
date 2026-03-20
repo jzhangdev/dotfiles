@@ -1,5 +1,11 @@
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+
+if command -v brew >/dev/null 2>&1; then
+  BREW_PREFIX="$(brew --prefix)"
+  [ -f "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  [ -f "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
 
 # alias
 alias ls='eza'
@@ -14,9 +20,6 @@ export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
 
 # Bitwarden SSH agent
 export SSH_AUTH_SOCK="$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock"
-
-# Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
 
 # Android SDK
 export ANDROID_HOME=~/Library/Android/sdk
@@ -39,7 +42,7 @@ esac
 # pnpm end
 
 # Starship
-eval "$(starship init zsh)"
+command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 
 # zoxide
-eval "$(zoxide init zsh)"
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
