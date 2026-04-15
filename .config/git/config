@@ -5,8 +5,8 @@
 [includeIf "gitdir:~/Dev/personal/"]
     path = ~/Dev/personal/.gitconfig-personal
 
-[includeIf "gitdir:~/Dev/kira-learning-platform/"]
-    path = ~/Dev/kira-learning-platform/.gitconfig-kira
+[includeIf "gitdir:~/Dev/zopia/"]
+    path = ~/Dev/zopia/.gitconfig-zopia
 
 [core]
     pager = delta

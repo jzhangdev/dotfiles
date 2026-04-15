@@ -13,6 +13,7 @@ alias ll='eza -lh --git'
 alias la='eza -lha'
 alias tree='eza --tree'
 alias gsw="git switch"
+alias gd='git diff'
 
 # proto
 export PROTO_HOME="$HOME/.proto";
