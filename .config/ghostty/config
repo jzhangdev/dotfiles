@@ -1,0 +1,10 @@
+font-family = Monospace Neon
+font-family-bold = Monospace Neon
+font-family-italic = Monospace Neon
+font-family-bold-italic = Monospace Neon
+font-size = 14
+background-opacity = 0.96
+command = /bin/zsh
+working-directory = inherit
+macos-titlebar-style = tabs
+auto-update-channel = stable
