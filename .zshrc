@@ -48,3 +48,4 @@ command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 
 # zoxide
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
+export PATH="$HOME/.local/bin:$PATH"
