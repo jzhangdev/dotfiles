@@ -1,7 +1,7 @@
-font-family = Monospace Neon
-font-family-bold = Monospace Neon
-font-family-italic = Monospace Neon
-font-family-bold-italic = Monospace Neon
+font-family = Maple Mono NF CN
+font-family-bold = Maple Mono NF CN
+font-family-italic = Maple Mono NF CN
+font-family-bold-italic = Maple Mono NF CN
 font-size = 14
 background-opacity = 0.96
 command = /bin/zsh

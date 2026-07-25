@@ -1,12 +1,8 @@
-[user]
-    name =
-    email =
+[includeIf "gitdir:~/Dev/github/"]
+    path = ~/.config/git/personal.inc
 
-[includeIf "gitdir:~/Dev/personal/"]
-    path = ~/Dev/personal/.gitconfig-personal
-
-[includeIf "gitdir:~/Dev/zopia/"]
-    path = ~/Dev/zopia/.gitconfig-zopia
+[includeIf "gitdir:~/Dev/infiDive/"]
+    path = ~/.config/git/work.inc
 
 [core]
     pager = delta
