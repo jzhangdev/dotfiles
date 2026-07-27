@@ -1,6 +1,9 @@
+# Taps
 tap "localstack/tap"
 tap "pulumi/tap"
 tap "steipete/tap"
+
+# CLI essentials
 brew "autoconf"
 brew "libyaml"
 brew "cocoapods"
@@ -15,30 +18,45 @@ brew "mole"
 brew "mosh"
 brew "neovim"
 brew "nx"
-brew "openjdk@17"
 brew "poppler"
 brew "pulumi"
 brew "rename"
 brew "ripgrep"
-brew "starship"
 brew "tig"
 brew "tmux"
 brew "typst"
 brew "yt-dlp"
 brew "zig"
+brew "localstack/tap/localstack-cli"
+
+# Shell
+brew "starship"
 brew "zoxide"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-brew "localstack/tap/localstack-cli"
+
+# Languages / runtimes
+brew "openjdk@17"
+
+# Casks — fonts
+cask "font-hack-nerd-font"
+cask "font-maple-mono-nf-cn"
+
+# Casks — terminal & editor
+cask "ghostty"
+cask "sublime-merge"
+cask "sublime-text"
+cask "visual-studio-code"
+
+# Casks — AI / coding tools
 cask "claude"
 cask "claude-code"
 cask "codex"
 cask "codex-app"
 cask "conductor"
+
+# Casks — apps
 cask "easydict"
-cask "font-hack-nerd-font"
-cask "font-maple-mono-nf-cn"
-cask "ghostty"
 cask "google-chrome"
 cask "thaw"
 cask "neteasemusic"
@@ -50,9 +68,6 @@ cask "plexamp"
 cask "raycast"
 cask "shottr"
 cask "spotify"
-cask "sublime-merge"
-cask "sublime-text"
 cask "tailscale-app"
 cask "telegram"
-cask "visual-studio-code"
 cask "yaak"

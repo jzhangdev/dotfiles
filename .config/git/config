@@ -7,15 +7,42 @@
 [core]
     pager = delta
     ignorecase = false
+    autocrlf = input
+    editor = nvim
 
 [init]
     defaultBranch = main
+
+[credential]
+    helper = osxkeychain
+
+[push]
+    autoSetupRemote = true
+    default = simple
+
+[pull]
+    rebase = true
+
+[fetch]
+    prune = true
+
+[rerere]
+    enabled = true
+
+[column]
+    ui = auto
+
+[branch]
+    sort = -committerdate
 
 [alias]
     st = status
     br = branch
     co = checkout
     ci = commit
+    last = log -1 HEAD
+    lg = log --oneline --decorate --graph -20
+    unstage = restore --staged
 
 [interactive]
     diffFilter = delta --color-only

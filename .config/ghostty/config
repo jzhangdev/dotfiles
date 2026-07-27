@@ -8,3 +8,15 @@ command = /bin/zsh
 working-directory = inherit
 macos-titlebar-style = tabs
 auto-update-channel = stable
+
+# Shell integration: better cursor, cwd reporting, and title
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title
+
+# Clipboard and window behavior
+copy-on-select = clipboard
+confirm-close-surface = true
+window-padding-x = 8
+window-padding-y = 6
+cursor-style = bar
+cursor-style-blink = true
