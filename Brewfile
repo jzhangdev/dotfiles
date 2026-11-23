@@ -51,6 +51,7 @@ cask "claude"
 cask "claude-code"
 cask "codex"
 cask "codex-app"
+cask "grok-bot"
 
 # Casks — apps
 cask "easydict"
