@@ -207,11 +207,6 @@ install_brew_bundle() {
 
   eval "$("$brew_bin" shellenv)"
 
-  # Homebrew 6 requires explicit trust for third-party formulae and casks.
-  if "$brew_bin" trust --help >/dev/null 2>&1; then
-    "$brew_bin" trust --formula localstack/tap/localstack-cli
-  fi
-
   export HOMEBREW_CURL_RETRIES="${HOMEBREW_CURL_RETRIES:-5}"
   log "Installing Brewfile dependencies"
   if ! "$brew_bin" bundle install --file "$repo_root/Brewfile"; then

@@ -1,5 +1,4 @@
 # Taps
-tap "localstack/tap"
 tap "pulumi/tap"
 tap "steipete/tap"
 
@@ -27,7 +26,6 @@ brew "tmux"
 brew "typst"
 brew "yt-dlp"
 brew "zig"
-brew "localstack/tap/localstack-cli"
 
 # Shell
 brew "starship"
@@ -53,7 +51,6 @@ cask "claude"
 cask "claude-code"
 cask "codex"
 cask "codex-app"
-cask "conductor"
 
 # Casks — apps
 cask "easydict"
@@ -63,6 +60,7 @@ cask "neteasemusic"
 cask "netnewswire"
 cask "ngrok"
 cask "obsidian"
+cask "openusage"
 cask "orbstack"
 cask "plexamp"
 cask "raycast"
