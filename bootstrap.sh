@@ -173,7 +173,7 @@ write_git_identity() {
 
 ensure_dev_dirs() {
   local dir
-  for dir in "$setup_home/Dev/github" "$setup_home/Dev/infiDive"; do
+  for dir in "$setup_home/Dev/github" "$setup_home/Dev/work"; do
     if [[ ! -d "$dir" ]]; then
       mkdir -p "$dir"
       log "Created workspace directory: $dir"

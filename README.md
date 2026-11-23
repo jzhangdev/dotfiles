@@ -19,11 +19,11 @@ Then open a new terminal window (or restart Ghostty).
 
 1. Ensures **Xcode Command Line Tools** are installed
 2. Installs **Homebrew** (if missing) and runs `brew bundle` against `Brewfile`
-3. Creates workspace dirs: `~/Dev/github`, `~/Dev/infiDive`
+3. Creates workspace dirs: `~/Dev/github`, `~/Dev/work`
 4. Symlinks tracked configs into `$HOME` (existing files are moved to `~/.dotfiles-backup/<timestamp>/`)
 5. Creates **git identity** files if missing:
    - `~/.config/git/personal.inc` → repos under `~/Dev/github/`
-   - `~/.config/git/work.inc` → repos under `~/Dev/infiDive/`
+   - `~/.config/git/work.inc` → repos under `~/Dev/work/`
 6. Optionally applies **macOS defaults** (`scripts/macos.sh`)
 
 Re-running is safe: correct symlinks are left alone; existing identity files are kept.

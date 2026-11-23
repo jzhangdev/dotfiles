@@ -1,7 +1,7 @@
 [includeIf "gitdir:~/Dev/github/"]
     path = ~/.config/git/personal.inc
 
-[includeIf "gitdir:~/Dev/InfiDive/"]
+[includeIf "gitdir:~/Dev/work/"]
     path = ~/.config/git/work.inc
 
 [core]
