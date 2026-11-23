@@ -48,10 +48,10 @@ cask "sublime-text"
 cask "visual-studio-code"
 
 # Casks — AI / coding tools
+cask "chatgpt"
 cask "claude"
 cask "claude-code"
 cask "codex"
-cask "codex-app"
 cask "grok-bot"
 
 # Casks — apps
