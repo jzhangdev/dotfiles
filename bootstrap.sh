@@ -7,6 +7,7 @@ setup_home="${DOTFILES_HOME_OVERRIDE:-$HOME}"
 backup_root="$setup_home/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
 backup_created=false
 brew_bundle_failed=false
+proto_status="skipped"
 linked_paths=()
 identity_created=()
 identity_kept=()
@@ -215,6 +216,43 @@ install_brew_bundle() {
   fi
 }
 
+install_proto() {
+  if [[ "${DOTFILES_SKIP_PROTO:-0}" == 1 ]]; then
+    log "Skipping proto"
+    proto_status="skipped"
+    return
+  fi
+
+  local proto_home="$setup_home/.proto"
+  local proto_bin="$proto_home/bin/proto"
+
+  if [[ -x "$proto_bin" ]]; then
+    log "proto already installed ($("$proto_bin" --version 2>/dev/null || echo unknown))"
+    proto_status="ok"
+    return
+  fi
+
+  if ! command -v curl >/dev/null 2>&1; then
+    warn "curl is required to install proto"
+    proto_status="failed"
+    return
+  fi
+
+  if ! command -v xz >/dev/null 2>&1; then
+    warn "xz is required to unpack proto (brew install xz)"
+    proto_status="failed"
+    return
+  fi
+
+  log "Installing proto"
+  if PROTO_HOME="$proto_home" bash <(curl -fsSL https://moonrepo.dev/install/proto.sh) --yes --no-profile; then
+    proto_status="ok"
+  else
+    warn "proto installation failed"
+    proto_status="failed"
+  fi
+}
+
 apply_macos_defaults() {
   local script="$repo_root/scripts/macos.sh"
 
@@ -284,6 +322,12 @@ print_summary() {
     print -r -- "Homebrew: ok"
   fi
 
+  case "$proto_status" in
+    ok) print -r -- "proto: ok" ;;
+    failed) print -r -- "proto: failed (see messages above)" ;;
+    *) print -r -- "proto: skipped" ;;
+  esac
+
   print -r -- ""
   print -r -- "Next steps:"
   print -r -- "  1. Restart your terminal (or open a new Ghostty window)"
@@ -295,6 +339,7 @@ print_summary() {
 
 ensure_xcode_clt
 install_brew_bundle
+install_proto
 ensure_dev_dirs
 link_dotfiles
 
@@ -324,5 +369,10 @@ print_summary
 
 if [[ "$brew_bundle_failed" == true ]]; then
   print -u2 -- "Homebrew did not satisfy every Brewfile dependency."
+  exit 1
+fi
+
+if [[ "$proto_status" == "failed" ]]; then
+  print -u2 -- "proto installation failed."
   exit 1
 fi

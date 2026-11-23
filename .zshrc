@@ -110,3 +110,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Machine-local overrides (not tracked in git)
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
+# proto activation runs after every PATH change so tool bins land in front
+if command -v proto >/dev/null 2>&1; then
+  eval "$(proto activate zsh)"
+fi
