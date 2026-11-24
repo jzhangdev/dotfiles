@@ -52,6 +52,7 @@ cask "chatgpt"
 cask "claude"
 cask "claude-code"
 cask "codex"
+cask "google-gemini"
 cask "grok-bot"
 
 # Casks — apps
